@@ -35,13 +35,15 @@ if (!app.requestSingleInstanceLock()) {
     new Notification({ title: 'bootytap: praise not delivered', body }).show();
   };
 
-  const tap = () => {
+  const tap = (quiet = false) => {
     if (!overlay || !config) return;
     overlay.play();
-    if (config.typePraise) injector.inject(pick());
+    if (config.typePraise && !quiet) injector.inject(pick());
   };
 
-  app.on('second-instance', () => tap());
+  app.on('second-instance', (event, argv) => {
+    tap(Array.isArray(argv) && argv.includes('--quiet'));
+  });
 
   app.on('window-all-closed', () => {
     // Keep running in the tray; quitting happens via the tray menu.

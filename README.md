@@ -45,6 +45,20 @@ npm link    # optional: global `bootytap` command
 
 If the hotkey is taken by another app, bootytap falls back to `⌘⌥⇧B` / `Ctrl+Alt+Shift+B` — the tray menu shows the active one.
 
+## Use from Claude (MCP)
+
+bootytap ships an MCP server, so Claude can be tapped from inside a conversation — no
+hotkey, no focus games. Register it once for Claude Code:
+
+```bash
+claude mcp add -s user bootytap bootytap-mcp
+```
+
+New sessions get a `tap` tool: say "tap" mid-task (or let Claude celebrate on its own)
+and the peach animation plays on your screen while the praise arrives in-chat through
+the protocol. Any other MCP client can use it too — the command is just `bootytap-mcp`
+(stdio).
+
 The praise line + Enter goes to **whatever window has focus**, so focus your Claude Code
 terminal first — and mind that Enter submits anything already half-typed there. bootytap
 doesn't start at login yet; add it to your OS's login items if you want it always running.

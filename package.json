@@ -1,10 +1,11 @@
 {
   "name": "bootytap",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A light, affectionate tap for your vibe-coding agent. The loving inversion of the digital whip.",
   "main": "src/main.js",
   "bin": {
-    "bootytap": "bin/bootytap.js"
+    "bootytap": "bin/bootytap.js",
+    "bootytap-mcp": "mcp/server.js"
   },
   "scripts": {
     "start": "electron .",
@@ -31,6 +32,7 @@
   },
   "files": [
     "bin",
+    "mcp",
     "src",
     "assets",
     "LICENSE",

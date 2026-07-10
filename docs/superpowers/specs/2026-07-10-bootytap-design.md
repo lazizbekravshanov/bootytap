@@ -59,7 +59,7 @@ Praise lines are ASCII-safe only (`<3`, not `♡`) because unicode injection is 
 
 ### 4. Praise pool + config
 - ~15 built-in praise lines in a bundled JSON file, selected uniformly at random.
-- Config: tiny JSON in Electron's userData dir. Three keys: `typePraise` (bool, default true), `launchAtLogin` (bool, default false), plus the resolved hotkey. No accounts, no network, no telemetry.
+- Config: tiny JSON in Electron's userData dir. Four keys: `typePraise` (bool, default true), `launchAtLogin` (bool, default false), the resolved hotkey, and `injectionHelpShown` (bool — the once-only failure notification flag). No accounts, no network, no telemetry.
 
 ## Error handling
 

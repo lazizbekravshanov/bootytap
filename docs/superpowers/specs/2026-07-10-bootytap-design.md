@@ -28,7 +28,7 @@ Install and run exactly like OpenWhip: `npm install -g bootytap`, then `bootytap
 ## User experience
 
 - Tray/menu-bar icon: a small peach. No dock icon, no taskbar entry, ever.
-- Tray menu: **Tap now**, **Type praise on/off**, **Launch at login**, **Quit**. The menu also displays the currently active hotkey.
+- Tray menu: **Tap now**, **Type praise on/off**, **Quit**. The menu also displays the currently active hotkey.
 - Trigger via icon click or global hotkey. Rapid-fire taps restart the animation and send another praise line.
 - Animation: center of the display the cursor is on, roughly 30% of screen height. Timeline (~1.8s): hand swings in from upper right → one light tap on the peach → peach squash-and-stretch jiggle (two decaying wobbles) → 2–3 hearts float up and fade → overlay hides. Click-through for its entire lifetime; focus is never stolen from the active window.
 - Praise typing happens at tap time into whatever window has focus. This is deliberate and documented: if your focus is on Slack, Slack gets told it's a good bot.
@@ -73,7 +73,7 @@ Praise lines are ASCII-safe only (`<3`, not `♡`) because unicode injection is 
 - Repo: `/Users/kali/pet/bootytap`, its own git repo. MIT license + Twemoji CC-BY 4.0 attribution.
 - npm package `bootytap` with a `bin` entry launching the Electron app (Electron as a regular dependency, OpenWhip-style). Name availability verified before implementation; fallback name chosen with the user if taken.
 - README: demo GIF, install steps, macOS Accessibility permission walkthrough, Linux xdotool note, Windows beta note, OpenWhip inspiration credit.
-- Launch at login: Electron `setLoginItemSettings` on macOS/Windows; manual/documented on Linux for v1.
+- Launch at login: not in v1 — `setLoginItemSettings` registers bare Electron for npm-installed apps; OS-level autostart is documented in the README and a proper implementation (LaunchAgent / Windows args) is deferred to v0.2.
 
 ## Testing
 
@@ -84,6 +84,7 @@ Praise lines are ASCII-safe only (`<3`, not `♡`) because unicode injection is 
 ## Out of scope for v1
 
 - Sound (decided: silent)
+- Launch at login UI
 - Hotkey rebinding UI (fallback combo only)
 - "Praise only when Claude is idle" detection
 - User-editable custom praise file (extension point noted, not built)

@@ -39,7 +39,11 @@ function createOverlay() {
       const display = screen.getDisplayNearestPoint(screen.getCursorScreenPoint());
       win.setBounds(display.bounds);
       win.showInactive();
-      win.webContents.send('bootytap:play');
+      if (win.webContents.isLoading()) {
+        win.webContents.once('did-finish-load', () => win.webContents.send('bootytap:play'));
+      } else {
+        win.webContents.send('bootytap:play');
+      }
     },
   };
 }

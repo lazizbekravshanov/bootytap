@@ -4,6 +4,8 @@
 
 A light, affectionate tap for your vibe-coding agent — the loving inversion of [OpenWhip](https://github.com/GitFrog1111/OpenWhip).
 
+![bootytap demo: a hand taps a peach over a Claude Code terminal, hearts float up, and praise is typed into the session](docs/demo.gif)
+
 One hotkey: a gentle peach-tap animation plays over your screen, and a little praise —
 `good bot, keep vibing <3` — is typed into your focused Claude Code session, where it
 arrives as a real message. Claude genuinely receives the love.

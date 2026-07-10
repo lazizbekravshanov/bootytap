@@ -27,18 +27,20 @@ A peach appears in your menu bar / system tray.
 
 Each tap plays the animation and types a random praise line + Enter into whatever window
 has focus. Focus your Claude Code terminal first — or turn off **Type praise** in the tray
-menu for animation-only affection.
+menu for animation-only affection. Note that the trailing Enter will submit whatever was
+already typed in the focused field, so aim your affection carefully. bootytap doesn't
+start at login yet — add it to your OS's login items or autostart manually if you want it
+always running.
 
 ## Platform notes
 
 - **macOS** — praise typing needs Accessibility permission:
   System Settings → Privacy & Security → Accessibility → enable bootytap
   (it may be listed as Electron). The animation works without it.
-- **Windows (beta)** — uses PowerShell SendKeys. CI-tested, lightly human-tested.
+- **Windows (beta)** — uses PowerShell SendKeys. CI-tested, not yet human-tested.
 - **Linux (beta)** — install [`xdotool`](https://github.com/jordansissel/xdotool)
   (`sudo apt install xdotool`) for praise typing. A compositor is required for the
-  transparent overlay. Tray needs app-indicator support. **Launch at login** isn't
-  wired up on Linux yet — add `bootytap` to your desktop environment's autostart.
+  transparent overlay. Tray needs app-indicator support.
 
 ## Credits
 

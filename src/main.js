@@ -14,7 +14,13 @@ if (!app.requestSingleInstanceLock()) {
   let injector = null;
   let config = null;
 
-  const persist = () => saveConfig(app.getPath('userData'), config);
+  const persist = () => {
+    try {
+      saveConfig(app.getPath('userData'), config);
+    } catch (err) {
+      console.error(`bootytap: could not save config: ${err.message}`);
+    }
+  };
 
   const notifyInjectionFailure = () => {
     if (!config || config.injectionHelpShown) return;
@@ -30,6 +36,7 @@ if (!app.requestSingleInstanceLock()) {
   };
 
   const tap = () => {
+    if (!overlay || !config) return;
     overlay.play();
     if (config.typePraise) injector.inject(pick());
   };
@@ -42,6 +49,7 @@ if (!app.requestSingleInstanceLock()) {
 
   app.whenReady().then(() => {
     if (process.platform === 'darwin' && app.dock) app.dock.hide();
+    if (process.platform === 'win32') app.setAppUserModelId('com.bootytap.app');
     config = loadConfig(app.getPath('userData'));
     overlay = createOverlay();
     injector = createInjector({ onFailure: notifyInjectionFailure });

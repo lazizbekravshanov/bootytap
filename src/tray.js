@@ -1,5 +1,5 @@
 'use strict';
-const { Tray, Menu, nativeImage, app } = require('electron');
+const { Tray, Menu, nativeImage } = require('electron');
 const path = require('path');
 
 let tray = null;
@@ -20,16 +20,6 @@ function createTray({ onTap, config, onConfigChange, hotkeyLabel }) {
       checked: config.typePraise,
       click: (item) => {
         config.typePraise = item.checked;
-        onConfigChange();
-      },
-    },
-    {
-      label: 'Launch at login',
-      type: 'checkbox',
-      checked: config.launchAtLogin,
-      click: (item) => {
-        config.launchAtLogin = item.checked;
-        app.setLoginItemSettings({ openAtLogin: item.checked });
         onConfigChange();
       },
     },

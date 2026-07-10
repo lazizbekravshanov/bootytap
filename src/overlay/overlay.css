@@ -1,0 +1,82 @@
+html, body {
+  margin: 0;
+  overflow: hidden;
+  background: transparent;
+  height: 100%;
+}
+
+#stage {
+  position: fixed;
+  inset: 0;
+  visibility: hidden;
+}
+
+#stage.play {
+  visibility: visible;
+}
+
+.peach {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 30vh;
+  height: 30vh;
+  margin: -12vh 0 0 -15vh;
+  transform-origin: 50% 90%;
+}
+
+#stage.play .peach {
+  animation: jiggle 1.8s ease-in-out both;
+}
+
+.hand {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 22vh;
+  height: 22vh;
+  margin: -30vh 0 0 -4vh;
+  opacity: 0;
+}
+
+#stage.play .hand {
+  animation: tap 1.8s ease-in-out both;
+}
+
+.heart {
+  position: absolute;
+  width: 6vh;
+  height: 6vh;
+  opacity: 0;
+}
+
+.h1 { left: calc(50% + 12vh); top: calc(50% - 4vh); }
+.h2 { left: calc(50% - 18vh); top: calc(50% - 1vh); }
+.h3 { left: calc(50% + 4vh);  top: calc(50% - 10vh); }
+
+#stage.play .h1 { animation: float 1.8s ease-out both; }
+#stage.play .h2 { animation: float 1.8s ease-out 0.15s both; }
+#stage.play .h3 { animation: float 1.8s ease-out 0.3s both; }
+
+@keyframes tap {
+  0%       { transform: translate(28vh, -20vh) rotate(24deg); opacity: 0; }
+  12%      { opacity: 1; }
+  20%, 36% { transform: translate(2vh, -1vh) rotate(-14deg); opacity: 1; }
+  28%      { transform: translate(9vh, -9vh) rotate(8deg); }
+  55%      { transform: translate(28vh, -20vh) rotate(24deg); opacity: 1; }
+  60%, 100% { transform: translate(28vh, -20vh) rotate(24deg); opacity: 0; }
+}
+
+@keyframes jiggle {
+  0%, 18%    { transform: scale(1); }
+  23%        { transform: scale(1.16, 0.84); }
+  30%        { transform: scale(0.9, 1.1); }
+  39%        { transform: scale(1.08, 0.92); }
+  50%, 100%  { transform: scale(1); }
+}
+
+@keyframes float {
+  0%, 22%    { opacity: 0; transform: translateY(0) scale(0.6); }
+  32%        { opacity: 1; }
+  62%, 100%  { opacity: 0; transform: translateY(-18vh) scale(1.15); }
+}

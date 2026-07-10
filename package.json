@@ -20,6 +20,12 @@
     "peach"
   ],
   "license": "MIT",
+  "author": "Lazizbek Ravshanov",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lazizbekravshanov/bootytap.git"
+  },
+  "homepage": "https://github.com/lazizbekravshanov/bootytap#readme",
   "engines": {
     "node": ">=22.12.0"
   },

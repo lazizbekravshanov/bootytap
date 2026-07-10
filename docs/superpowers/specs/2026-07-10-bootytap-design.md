@@ -72,6 +72,7 @@ Praise lines are ASCII-safe only (`<3`, not `♡`) because unicode injection is 
 
 - Repo: `/Users/kali/pet/bootytap`, its own git repo. MIT license + Twemoji CC-BY 4.0 attribution.
 - npm package `bootytap` with a `bin` entry launching the Electron app (Electron as a regular dependency, OpenWhip-style). Name availability verified before implementation; fallback name chosen with the user if taken.
+- Distribution pivot (2026-07-10, user decision): v0.1.0 ships via GitHub (`lazizbekravshanov/bootytap`) instead of the npm registry — installable with `npm install -g github:lazizbekravshanov/bootytap` or clone + `npm link`. Registry publish remains possible later (name still unclaimed).
 - README: demo GIF, install steps, macOS Accessibility permission walkthrough, Linux xdotool note, Windows beta note, OpenWhip inspiration credit.
 - Launch at login: not in v1 — `setLoginItemSettings` registers bare Electron for npm-installed apps; OS-level autostart is documented in the README and a proper implementation (LaunchAgent / Windows args) is deferred to v0.2.
 

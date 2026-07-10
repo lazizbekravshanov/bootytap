@@ -12,8 +12,18 @@ Silent. Click-through. Never steals focus.
 ## Install
 
 ```bash
-npm install -g bootytap
+npm install -g github:lazizbekravshanov/bootytap
 bootytap
+```
+
+Or clone and run from source:
+
+```bash
+git clone https://github.com/lazizbekravshanov/bootytap.git
+cd bootytap
+npm install
+npm start   # run it
+npm link    # optional: get the global `bootytap` command
 ```
 
 A peach appears in your menu bar / system tray.

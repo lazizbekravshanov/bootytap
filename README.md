@@ -38,12 +38,12 @@ npm link    # optional: global `bootytap` command
 
 | Action | How |
 |---|---|
-| Tap 🍑 | Click the peach, or press `⌘⇧B` (`Ctrl+Shift+B` on Windows/Linux) |
+| Tap 🍑 | Click the peach, or press `⌃⌥⇧B` (Control+Option+Shift+B) |
 | Tap from the terminal | Run `bootytap` again while it's already running |
 | Animation only, no typing | Right-click the peach → untick **Type praise** |
 | Quit | Right-click the peach → **Quit bootytap** |
 
-If the hotkey is taken by another app, bootytap falls back to `⌘⌥⇧B` / `Ctrl+Alt+Shift+B` — the tray menu shows the active one.
+If the hotkey is taken by another app, bootytap falls back to `⌃⌥⇧P` — the tray menu shows the active one. (Control+Option+Shift is used because terminals grab most Command+Shift combos for their own menus.)
 
 ## Use from Claude (MCP)
 

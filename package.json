@@ -1,6 +1,6 @@
 {
   "name": "bootytap",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A light, affectionate tap for your vibe-coding agent. The loving inversion of the digital whip.",
   "main": "src/main.js",
   "bin": {

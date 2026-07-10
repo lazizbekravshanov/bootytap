@@ -1,8 +1,10 @@
 'use strict';
 const { globalShortcut } = require('electron');
 
-const PRIMARY = 'CommandOrControl+Shift+B';
-const FALLBACK = 'CommandOrControl+Alt+Shift+B';
+// Control+Option+Shift avoids the Command+Shift menu shortcuts that terminals
+// (New Remote Connection, Show Colors, etc.) claim while focused.
+const PRIMARY = 'Control+Alt+Shift+B';
+const FALLBACK = 'Control+Alt+Shift+P';
 
 function registerHotkey(onTap) {
   for (const accel of [PRIMARY, FALLBACK]) {
